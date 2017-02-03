@@ -449,3 +449,34 @@ img::-moz-selection {
 body {
   webkit-tap-highlight-color: #222222;
 }
+.social-media {
+  color: #fff;
+  display: block;
+  font-size: 75%;
+  font-weight: 500;
+  line-height: 1;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  text-transform: uppercase;
+  top: 80%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 9999;
+}
+.social-media a {
+  color: inherit;
+  display: block;
+  padding: 5px;
+}
+.social-media img {
+  display: block;
+  margin: 10px auto;
+  max-width: 28px;
+}
+.social-media .facebook {
+  background-color: #3664a2;
+}
+.social-media .twitter {
+  background-color: white;
+}
