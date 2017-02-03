@@ -72,6 +72,9 @@ p {
   list-style: none;
   font-size: 18px;
 }
+#ce a {
+  color: blue;
+}
 #disclaimer {
   font-size: 20px;
   background-color: black;
