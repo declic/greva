@@ -38,7 +38,7 @@ h6 {
   font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
 }
 p {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
   margin-bottom: 20px;
 }
@@ -49,12 +49,16 @@ p {
 #greva p {
   text-align: left;
 }
-#cum {
+#calendar {
   background-color: white;
   color: black;
 }
-#cum p {
+#calendar p {
   text-align: left;
+}
+#calendar ul {
+  list-style: none;
+  font-size: 18px;
 }
 #ce {
   background-color: #FF0000;
@@ -64,7 +68,12 @@ p {
 #ce li {
   text-align: left;
 }
+#ce ul {
+  list-style: none;
+  font-size: 18px;
+}
 #disclaimer {
+  font-size: 20px;
   background-color: black;
   color: white;
 }
@@ -115,7 +124,7 @@ aside {
 .navbar-default .nav > li > a:focus {
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 14px;
   color: #222222;
 }
 .navbar-default .nav > li > a:hover,
