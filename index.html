@@ -51,7 +51,7 @@
                         <a class="page-scroll" href="#greva">Greva</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#cum">Cum facem</a>
+                        <a class="page-scroll" href="#calendar">Calendar</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#ce">Ce putem face</a>
@@ -64,15 +64,12 @@
     </nav>
 
     <header>
-        <div class="header-content">
-            <div class="header-content-inner">
-                <h1 id="homeHeading">GREVA CETĂȚENILOR</h1>
-                <hr>
-                <p>
-                ÎMPOTRIVA ORDONANȚELOR
-                </p>
-                <!--a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a-->
+
+        <div id="asd_holder">
+            <div id="asd_pages">
             </div>
+            <button id="asd_prev" class="asd_button asd_button_left"><<</button>
+            <button id="asd_next" class="asd_button asd_button_right">>></button>
         </div>
     </header>
 
@@ -106,20 +103,19 @@
         </div>
     </section>
 
-    <section id="cum">
+    <section id="calendar">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Greva cetățenilor</h2>
+                    <h2 class="section-heading">Calendarul grevei</h2>
                     <hr class="light">
                     <p>
-                    Toată săptămâna ne vom opri din lucru, progresiv. În prima zi doar 10 minute, urmând ca vineri (11 febr), în ultima zi în care Guvernul poate retrage Ordonanța, să facem grevă întreaga zi.
+                    Toată săptămâna ne vom opri din lucru, progresiv. În prima zi doar 5 minute, urmând ca vineri (11 febr), în ultima zi în care Guvernul poate retrage Ordonanța, să facem grevă întreaga zi.
                     </p>
 
                     <p>
                     Calendarul grevei este acesta:
                     </p>
-
                     <ul>
                         <li> Luni - 6 februarie 2017 - ora 12.00 - 5 minute</li>
                         <li> Marți - 7 februarie 2017 - ora 12.00 - 10 minute</li>
@@ -127,11 +123,9 @@
                         <li> Joi - 9 februarie - ora 12.00 - o oră</li>
                         <li> Vineri - 10 februarie - toată ziua</li>
                     </ul>
-
                     <p>
                     Orice ai lucra, oriunde ai fi, oprește-te din muncă la ora 12.00 și afișează mesajul tău de nesupunere civică și protest împotriva abuzurilor puterii.
                     </p>
-                    <!--a href="#services" class="page-scroll btn btn-default btn-xl sr-button">Get Started!</a-->
                 </div>
             </div>
         </div>
@@ -348,17 +342,294 @@
     </section>
 
     <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-countdown/2.0.2/jquery.plugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-countdown/2.0.2/jquery.countdown.min.js"></script>
 
     <!-- Theme JavaScript -->
     <script src="js/creative.min.js"></script>
+
+    <script type="text/javascript">
+
+    var asd_label_before = "In "
+    var asd_label_action = "TIMP DE "
+    var asd_label_after = ""
+
+    var asd_time_left_format1 = "%D zile %H ore %M minute %S secunde"
+    var asd_time_left_format2 = "%H ore %M minute %S secunde"
+    var asd_time_left_format3 = "%M minute %S secunde"
+    var asd_time_left_format4 = "%S secunde"
+
+    var text_1 = "SUNT IN"
+    var text_2 = "GREVA CETATENILOR"
+    var text_3 = "IMPOTRIVA ORDONANTELOR"
+
+    var asd_pages = [
+    {
+        "text_4": "Luni - 6 februarie 2017 - ora 12.00 - timp de 5 minute",
+        "start_date": "2017/02/06 12:00:00",
+        "end_date": "2017/02/06 12:05:00",
+    },
+    {
+        "text_4": "Marti - 7 februarie 2017 - ora 12.00 - timp de 10 minute",
+        "start_date": "2017/02/07 12:00:00",
+        "end_date": "2017/02/07 12:10:00",
+    },
+    {
+        "text_4": "Miercuri - 8 februarie - ora 12.00 - timp de 30 de minute",
+        "start_date": "2017/02/08 12:00:00",
+        "end_date": "2017/02/08 12:30:00",
+    },
+    {
+        "text_4": "Joi - 9 februarie - ora 12.00 - timp de o ora",
+        "start_date": "2017/02/09 12:00:00",
+        "end_date": "2017/02/09 13:00:00",
+    },
+    {
+        "text_4": "Vineri - 10 februarie - toata ziua",
+        "start_date": "2017/02/10 00:00:00",
+        "end_date": "2017/03/10 00:00:00",
+    },
+        ]
+
+        var asd_active_page_index = 1;
+
+    </script>
+
+    <style type="text/css">
+@font-face {
+    font-family: 'BebasNeueRegular';
+    src: url('BebasNeue-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.asd_line_0 {
+    display: none;
+}
+
+#asd_holder {
+    font-family: BebasNeueRegular;
+}
+
+.asd_page {
+    position: relative;
+    display: none;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+.asd_button {
+    display: block;
+    position: absolute;
+
+    top: 100px;
+    width: 30px;
+    height: 30px;
+}
+
+.asd_button_left {
+    left: 20px;
+}
+
+.asd_button_right {
+    right: 20px;
+}
+
+.asd_active_page {
+    display: block;
+}
+
+.asd_page {
+    padding: 10px;
+}
+
+.asd_line_1 {
+    font-size: 20px;
+}
+
+.asd_line_2 {
+    font-size: 40px;
+}
+
+.asd_line_3 {
+    font-size: 20px;
+}
+
+.asd_line_4 {
+    font-size: 20px;
+}
+
+.asd_line_5 {
+    font-size: 20px;
+}
+
+            @media screen and (min-width: 760px) {
+                .asd_page {
+                    padding: 20px;
+                }
+
+                .asd_button {
+                    top: 160px;
+                    width: 40px;
+                    height: 40px;
+                }
+
+                .asd_line_1 {
+                    font-size: 32px;
+                }
+
+                .asd_line_2 {
+                    font-size: 64px;
+                }
+
+                .asd_line_3 {
+                    font-size: 32px;
+                }
+
+                .asd_line_4 {
+                    font-size: 32px;
+                }
+
+                .asd_line_5 {
+                    font-size: 32px;
+                }
+            }
+
+            @media screen and (min-width: 1200px) {
+                .asd_button {
+                    top: 246px;
+                    width: 50px;
+                    height: 50px;
+                }
+
+                .asd_page {
+                    padding: 40px;
+                }
+
+                .asd_line_1 {
+                    font-size: 32px;
+                }
+
+                .asd_line_2 {
+                    font-size: 125px;
+                }
+
+                .asd_line_3 {
+                    font-size: 48px;
+                }
+
+                .asd_line_4 {
+                    font-size: 32px;
+                }
+
+                .asd_line_5 {
+                    font-size: 72px;
+                }
+            }
+
+    </style>
+
+    <script type="text/javascript">
+var asd_past = Date.now()
+var asd_now = Date.now()
+
+    function asd_time_printer(event) {
+        if (event.offset.totalDays > 0) {
+            $(this).text(event.strftime(asd_time_left_format1))
+        } else if (event.offset.totalHours > 0) {
+            $(this).text(event.strftime(asd_time_left_format2))
+        } else if (event.offset.totalMinutes > 0) {
+            $(this).text(event.strftime(asd_time_left_format3))
+        } else {
+            $(this).text(event.strftime(asd_time_left_format4))
+        }
+    }
+
+for (var i = 0; i < asd_pages.length; i++) {
+    var page = asd_pages[i]
+
+        $("#asd_pages").append(`
+                <div id="asd_page_` + i + `" class="asd_page">
+                <div class="asd_line_0">` + i + `</div>
+                <div class="asd_line_1">` + text_1 + `</div>
+                <div class="asd_line_2">` + text_2 + `</div>
+                <div class="asd_line_3">` + text_3 + `</div>
+                <div class="asd_line_4">` + page["text_4"] + `</div>
+                <div class="asd_line_5">
+                <label class="asd_label"></label>
+                <label class="asd_counter"></label>
+                </div>
+                </div>
+                `)
+
+        var start_date =  Date.parse(page["start_date"], "yyyy/MM/dd HH:mm:ss")
+        var end_date =  Date.parse(page["end_date"], "yyyy/MM/dd HH:mm:ss")
+
+        if (asd_now < end_date) {
+            if (asd_active_page_index === undefined) {
+                asd_active_page_index = i
+            }
+        }
+    if (asd_now < start_date) {
+        $("#asd_page_" + i + " .asd_counter").countdown(start_date, asd_time_printer)
+    } else if (asd_now < end_date) {
+        $("#asd_page_" + i + " .asd_counter").countdown(end_date, asd_time_printer)
+    }
+}
+
+$("#asd_page_" + asd_active_page_index).addClass("asd_active_page")
+
+$("#asd_prev").click(function () {
+    if (asd_active_page_index > 0) {
+        $("#asd_page_" + asd_active_page_index).removeClass("asd_active_page")
+            asd_active_page_index -= 1
+            $("#asd_page_" + asd_active_page_index).addClass("asd_active_page")
+            asd_refresh()
+    }
+})
+
+$("#asd_next").click(function () {
+    if (asd_active_page_index < asd_pages.length - 1) {
+        $("#asd_page_" + asd_active_page_index).removeClass("asd_active_page")
+            asd_active_page_index += 1
+            $("#asd_page_" + asd_active_page_index).addClass("asd_active_page")
+            asd_refresh()
+    }
+})
+
+                       function asd_refresh() {
+                       var i = asd_active_page_index
+                       var page = asd_pages[i]
+
+                       asd_past = asd_now
+                       asd_now = Date.now()
+
+                       if (asd_past < Date.parse(page["start_date"], "yyyy/MM/dd HH:mm:ss") && asd_now > Date.parse(page["start_date"], "yyyy/MM/dd HH:mm:ss")) {
+                           $("#asd_page_" + i + " .asd_counter").countdown(page["end_date"])
+                       }
+
+                       if (asd_now < Date.parse(page["start_date"], "yyyy/MM/dd HH:mm:ss")) {
+                       $("#asd_page_" + i + " .asd_label").html(asd_label_before)
+                       } else if (asd_now < Date.parse(page["end_date"], "yyyy/MM/dd HH:mm:ss")) {
+                       $("#asd_page_" + i + " .asd_label").html(asd_label_action)
+                       // $("#asd_page_" + i + " .asd_counter").html("")
+                       } else {
+                       $("#asd_page_" + i + " .asd_label").html(asd_label_after)
+                       $("#asd_page_" + i + " .asd_counter").html("")
+                       }
+                       }
+
+                       asd_refresh()
+                       setInterval(asd_refresh, 1000)
+    </script>
 
 </body>
 
