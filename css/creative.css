@@ -54,7 +54,7 @@ p {
   color: black;
 }
 #calendar p {
-  text-align: left;
+  text-align: center;
 }
 #calendar ul {
   list-style: none;
