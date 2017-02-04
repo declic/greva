@@ -421,6 +421,54 @@ fieldset[disabled] .btn-primary.active {
   color: #BF0000;
   background-color: white;
 }
+.btn-fb {
+  color: white;
+  background-color: #0b406c;
+  border-color: #84C0F2;
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  transition: all 0.35s;
+}
+.btn-fb:hover,
+.btn-fb:focus,
+.btn-fb.focus,
+.btn-fb:active,
+.btn-fb.active,
+.open > .dropdown-toggle.btn-fb {
+  color: white;
+  background-color: #093255;
+  border-color: #64afef;
+}
+.btn-fb:active,
+.btn-fb.active,
+.open > .dropdown-toggle.btn-fb {
+  background-image: none;
+}
+.btn-fb.disabled,
+.btn-fb[disabled],
+fieldset[disabled] .btn-fb,
+.btn-fb.disabled:hover,
+.btn-fb[disabled]:hover,
+fieldset[disabled] .btn-fb:hover,
+.btn-fb.disabled:focus,
+.btn-fb[disabled]:focus,
+fieldset[disabled] .btn-fb:focus,
+.btn-fb.disabled.focus,
+.btn-fb[disabled].focus,
+fieldset[disabled] .btn-fb.focus,
+.btn-fb.disabled:active,
+.btn-fb[disabled]:active,
+fieldset[disabled] .btn-fb:active,
+.btn-fb.disabled.active,
+.btn-fb[disabled].active,
+fieldset[disabled] .btn-fb.active {
+  background-color: #0b406c;
+  border-color: #84C0F2;
+}
+.btn-fb .badge {
+  color: #0b406c;
+  background-color: white;
+}
 .btn {
   font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
   border: none;
