@@ -43,14 +43,14 @@ p {
   margin-bottom: 20px;
 }
 #greva {
-  background-color: #84C0F2;
+  background-color: white;
   color: black;
 }
 #greva p {
   text-align: left;
 }
 #calendar {
-  background-color: white;
+  background-color: #84C0F2;
   color: black;
 }
 #calendar p {
